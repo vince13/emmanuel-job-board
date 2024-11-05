@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>job_platform</h1>
+	<div class="row">
+        {% for application in applications %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img src="{{ application.resume.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ application.applicant }}</h5>
+                <p class="card-text">{{ application.job }}</p>
+                <p class="card-text">{{ application.status }}</p>
+
+                <a href="#" class="btn btn-primary">View</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
